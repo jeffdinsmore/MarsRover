@@ -4,27 +4,33 @@
 <head>
   <title>Mars Picture Search</title>
 </head>
-
 <body>
   <header></header>
+  <img class="hero-image" src="./../assets/images/marsRover.jpg">
   <div class="container">
-    <h1 id="title">Mars Picture search</h1>
-    <div id="inputFields">
-      <label input="search">Search a Earth Date</label>
-      <input id="marsFind" type="date" min="2012-08-06" max="2020-09-09">
-    </div>
-    <div id="button">
-      <button class="btn btn-danger" id="marsButton">Search</button>
+    <div class="hero-text">
+      <h1 id="title">Mars Polaroid Picture Search</h1>
+      <div id="inputFields">
+        <label input="search">Enter an Earth Date</label>
+        <input id="marsFind" class="dateField" type="date" min="2012-08-06" max="2020-09-09">
+      </div>
+      <div id="button">
+        <button class="btn btn-danger" id="marsButton">Search</button>
+      </div>
     </div>
     <div id="marsResult">
       <div class="row">
         <div class="col-lg-5">
           <img id="searchResultOne" src="">
-          <p id="searchResultOneText"></p>
+          <p id="searchResultOneTextCenter"></p>
+          <p id="searchResultOneTextLeft"></p>
+          <p id="searchResultOneTextRight"></p>
         </div>
         <div class="col-lg-5">
           <img id="searchResultTwo" src="">
-          <p id="searchResultTwoText"></p>
+          <p id="searchResultTwoTextCenter"></p>
+          <p id="searchResultTwoTextLeft"></p>
+          <p id="searchResultTwoTextRight"></p>
         </div>
       </div>
     </div>

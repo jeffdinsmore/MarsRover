@@ -13,9 +13,14 @@ $(document).ready(function () {
     promise.then(function(response) {
       const body = JSON.parse(response);
       $("#searchResultOne").attr("src", body.photos[0].img_src);
-      $("#searchResultOneText").html("Camera: " + body.photos[0].camera.name + "<br>" + "Rover: " + body.photos[0].rover.name);
+      $("#searchResultOneTextCenter").html("Camera: " + body.photos[0].camera.full_name);
+      $("#searchResultOneTextLeft").html("Rover: " + body.photos[0].rover.name);
+      $("#searchResultOneTextRight").html("Sol Date: " + body.photos[0].sol);
       $("#searchResultTwo").attr("src", body.photos[3].img_src);
-      $("#searchResultTwoText").html("Camera: " + body.photos[3].camera.name + "<br>" + "Rover: " + body.photos[0].rover.name);
+      $("#searchResultTwoTextCenter").html("Camera: " + body.photos[3].camera.full_name);
+      $("#searchResultTwoTextLeft").html("Rover: " + body.photos[3].rover.name);
+      $("#searchResultTwoTextRight").html("Sol Date: " + body.photos[3].sol);
+
     }, function(error) {
       $("#searchResultOneText").html(`ERROR! Call Jeff! ${error}`);
     });
