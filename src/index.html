@@ -1,15 +1,21 @@
 <html lang="en-US">
+  <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
 
 <head>
   <title>Mars Picture Search</title>
 </head>
 
 <body>
+  <header></header>
   <div class="container">
-    <h1>Mars Picture search</h1>
-    <label input="search">Search a Earth Date</label>
-    <input id="marsFind" type="date">
-    <button class="btn btn-danger" id="marsButton">Search those pictures</button>
+    <h1 id="title">Mars Picture search</h1>
+    <div id="inputFields">
+      <label input="search">Search a Earth Date</label>
+      <input id="marsFind" type="date" min="2012-08-06" max="2020-09-09">
+    </div>
+    <div id="button">
+      <button class="btn btn-danger" id="marsButton">Search</button>
+    </div>
     <div id="marsResult">
       <div class="row">
         <div class="col-lg-5">

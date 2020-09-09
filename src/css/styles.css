@@ -1,15 +1,55 @@
 body {
-  background-color: lightblue;
+  background-color: black;
+  color:white;
 }
 
 button {
   margin: 20px 0px 20px 0px;
 }
-
+header {
+  height: 40px;
+}
 img {
   width: 440px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
 }
 
 #marsResult {
   display: none;
+  margin-top: 100px;
+  color: black;
+}
+
+.col-lg-5 {
+  background-color: white;
+  padding: 20px;
+  margin: 30px;
+}
+
+p {
+  margin: 15px 0px 0px 5px;
+  font-family: Schoolbell;
+  font-size: 26px;
+}
+.form-control {
+  width: 120px;
+
+}
+
+#marsFind {
+  border-radius: 25px;
+}
+
+#title {
+  text-align: center;
+}
+
+#inputFields {
+  text-align: center;
+}
+
+#button {
+  text-align: center;
 }

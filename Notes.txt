@@ -8,6 +8,9 @@ show information about the Pictures (little caption)
 Make it look like google
 display 3 pictures in a poloroid looking format
 show earth date, name of rover, what camera
+add more apis to get weather from picture for that date
+seperate promise logic
+
 
 
 
