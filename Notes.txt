@@ -1,0 +1,10 @@
+1. Get functional API KEY from NASA Site
+2. figure out what we want to do! 
+3. Pictures from the rover? 
+4. How to search? Should it be random? Pictures from a week ago? 
+Created the google of Mars Rover Pictures. That would be cool
+set Maximum Sol Date
+show information about the Pictures (little caption)
+
+
+
