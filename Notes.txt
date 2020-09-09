@@ -5,6 +5,10 @@
 Created the google of Mars Rover Pictures. That would be cool
 set Maximum Sol Date
 show information about the Pictures (little caption)
+Make it look like google
+display 3 pictures in a poloroid looking format
+show earth date, name of rover, what camera
 
 
 
+https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-05-30&api_key=

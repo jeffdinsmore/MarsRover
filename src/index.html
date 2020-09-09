@@ -7,13 +7,21 @@
 <body>
   <div class="container">
     <h1>Mars Picture search</h1>
-    <label input="search">Search a Sol Date</label>
-    <input id="marsFind" type="number">
+    <label input="search">Search a Earth Date</label>
+    <input id="marsFind" type="date">
     <button class="btn btn-danger" id="marsButton">Search those pictures</button>
-    <div class="marsResult"></div>
-    <img id="searchResult" src="">
+    <div id="marsResult">
+      <div class="row">
+        <div class="col-lg-5">
+          <img id="searchResultOne" src="">
+          <p id="searchResultOneText"></p>
+        </div>
+        <div class="col-lg-5">
+          <img id="searchResultTwo" src="">
+          <p id="searchResultTwoText"></p>
+        </div>
+      </div>
     </div>
   </div>
 </body>
-
 </html>

@@ -5,12 +5,12 @@ import './css/styles.css';
 
 $(document).ready(function () {
   $("#marsButton").click(function () {
-    const solDate = $("#marsFind").val();
+    const earthDate = $("#marsFind").val();
     $("#marsFind").val(""); //This might be an aesthitic<sp> thing;
-
+    $("#marsResult").show();
 
     let request = new XMLHttpRequest();
-    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${solDate}&api_key=${process.env.API_KEY}`;
+    const url = `https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=${earthDate}&api_key=${process.env.API_KEY}`;
 
     request.onreadystatechange = function () {
       if (this.readyState === 4 && this.status === 200) {
@@ -23,7 +23,10 @@ $(document).ready(function () {
     request.send();
 
     function getElements(response) {
-      $("#searchResult").attr("src", response.photos[0].img_src);
+      $("#searchResultOne").attr("src", response.photos[0].img_src);
+      $("#searchResultOneText").html("Camera: " + response.photos[0].camera.name + "<br>" + "Rover: " + response.photos[0].rover.name);
+      $("#searchResultTwo").attr("src", response.photos[3].img_src);
+      $("#searchResultTwoText").html("Camera: " + response.photos[3].camera.name + "<br>" + "Rover: " + response.photos[0].rover.name);
     }
   });
 }); 
