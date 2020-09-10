@@ -1,39 +1,72 @@
 <html lang="en-US">
   <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
   <title>Mars Picture Search</title>
 </head>
 <body>
   <header></header>
-  <img class="hero-image" src="./../assets/images/marsRover.jpg">
+  <img class="hero-image" src="../assets/images/marsRover.jpg">
   <div class="container">
     <div class="hero-text">
       <h1 id="title">Mars Polaroid Picture Search</h1>
       <div id="inputFields">
         <label input="search">Enter an Earth Date</label>
-        <input id="marsFind" class="dateField" type="date" min="2012-08-06" max="2020-09-09">
+        <input id="marsFind" class="dateField" type="date" min="2012-08-06" max="2020-09-10">
       </div>
       <div id="button">
-        <button class="btn btn-danger" id="marsButton">Search</button>
+        <button class="btn btn-danger btn-lg" data-toggle="modal" data-target="#marsModal" id="marsButton">Search</button>
+      </div>
+      <p>created by Jeff Dinsmore and Michael Watts</p>
+    </div>
+    <!-- Modal content -->
+    <div class="modal fade" id="marsModal" role="dialog">
+      <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+          <div class="modal-header" style="background-color:grey">
+            <p>Your Search Results</p>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body">
+            <div id="marsResult">
+              <div class="row">
+                <div class="col-lg-5">
+                  <img id="searchResultOne" src="">
+                  <p id="searchResultOneTextCenter"></p>
+                  <p id="searchResultOneTextLeft"></p>
+                  <p id="searchResultOneTextRight"></p>
+                </div>
+                <div class="col-lg-5">
+                  <img id="searchResultTwo" src="">
+                  <p id="searchResultTwoTextCenter"></p>
+                  <p id="searchResultTwoTextLeft"></p>
+                  <p id="searchResultTwoTextRight"></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-5">
+                  <img id="searchResultThree" src="">
+                  <p id="searchResultThreeTextCenter"></p>
+                  <p id="searchResultThreeTextLeft"></p>
+                  <p id="searchResultThreeTextRight"></p>
+                </div>
+                <div class="col-lg-5">
+                  <img id="searchResultFour" src="">
+                  <p id="searchResultFourTextCenter"></p>
+                  <p id="searchResultFourTextLeft"></p>
+                  <p id="searchResultFourTextRight"></p> 
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
-    <div id="marsResult">
-      <div class="row">
-        <div class="col-lg-5">
-          <img id="searchResultOne" src="">
-          <p id="searchResultOneTextCenter"></p>
-          <p id="searchResultOneTextLeft"></p>
-          <p id="searchResultOneTextRight"></p>
-        </div>
-        <div class="col-lg-5">
-          <img id="searchResultTwo" src="">
-          <p id="searchResultTwoTextCenter"></p>
-          <p id="searchResultTwoTextLeft"></p>
-          <p id="searchResultTwoTextRight"></p>
-        </div>
-      </div>
-    </div>
+  </div>
+</div>
+    <!-- End Modal content -->
   </div>
 </body>
 </html>

@@ -1,10 +1,15 @@
 .hero-image {
+  background-size: cover;
   width: 100%;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
   position: relative;
-  background-image: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0,0.5))
+  background-image: linear-gradient(rgba(0,0,0, 0.5), rgba(0,0,0,0.5));
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+}
+.close {
+  color: white;
 }
 
 body {
@@ -27,7 +32,7 @@ header {
   height: 0px;
 }
 img {
-  width: 440px;
+  width: 100%;
   border-radius: 10px;
   display: block;
   margin: auto;
@@ -35,7 +40,8 @@ img {
 
 #marsResult {
   display: none;
-  margin-top: 100px;
+  margin:auto;
+  /* margin-top: 100px; */
   color: black;
 }  
 
@@ -71,15 +77,15 @@ p {
   text-align: center;
 }
 
-#searchResultOneTextLeft, #searchResultTwoTextLeft {
+#searchResultOneTextLeft, #searchResultTwoTextLeft, #searchResultThreeTextLeft, #searchResultFourTextLeft {
   float: left;
 }
 
-#searchResultOneTextRight, #searchResultTwoTextRight {
+#searchResultOneTextRight, #searchResultTwoTextRight, #searchResultThreeTextRight, #searchResultFourTextRight {
   float: right;
 }
 
-#searchResultOneTextCenter, #searchResultTwoTextCenter {
+#searchResultOneTextCenter, #searchResultTwoTextCenter, #searchResultThreeTextCenter, #searchResultFourTextCenter {
   text-align: center;
   clear: both;
 }
@@ -103,3 +109,7 @@ input[type=date]{
   background-color: rgba(103, 51, 31, .6);
   border-radius: 10px;
 } 
+
+.modal-body {
+  background-color: rgba(0,0,0,0.6);
+}
