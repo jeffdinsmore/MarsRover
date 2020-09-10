@@ -28,10 +28,6 @@ function getElements(response){
   }
 }
 
-async function makeApiCall(earthDate) {
-  const response = await NasaService.getMars(earthDate);
-  getElements(response);
-}
 
 $(document).ready(function () {
   $("#marsButton").click(function () {
@@ -48,6 +44,9 @@ $(document).ready(function () {
       $("#marsModal").modal(); 
       $("#marsResult").show();
     }
-    makeApiCall(earthDate);
-  });
+    (async function() {
+      const response = await NasaService.getMars(earthDate);
+      getElements(response);
+    })();
+  });  
 });
