@@ -4,40 +4,50 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import NasaService from './nasa-service.js';
 
+function getElements(response){
+  if (response) {
+    
+    $("#searchResultOne").attr("src", response.photos[0].img_src);
+    $("#searchResultOneTextCenter").html("Camera: " + response.photos[0].camera.full_name);
+    $("#searchResultOneTextLeft").html("Rover: " + response.photos[0].rover.name);
+    $("#searchResultOneTextRight").html("Sol Date: " + response.photos[0].sol);
+    $("#searchResultTwo").attr("src", response.photos[3].img_src);
+    $("#searchResultTwoTextCenter").html("Camera: " + response.photos[3].camera.full_name);
+    $("#searchResultTwoTextLeft").html("Rover: " + response.photos[3].rover.name);
+    $("#searchResultTwoTextRight").html("Sol Date: " + response.photos[3].sol);
+    $("#searchResultThree").attr("src", response.photos[4].img_src);
+    $("#searchResultThreeTextCenter").html("Camera: " + response.photos[4].camera.full_name);
+    $("#searchResultThreeTextLeft").html("Rover: " + response.photos[4].rover.name);
+    $("#searchResultThreeTextRight").html("Sol Date: " + response.photos[4].sol);
+    $("#searchResultFour").attr("src", response.photos[5].img_src);
+    $("#searchResultFourTextCenter").html("Camera: " + response.photos[5].camera.full_name);
+    $("#searchResultFourTextLeft").html("Rover: " + response.photos[5].rover.name);
+    $("#searchResultFourTextRight").html("Sol Date: " + response.photos[5].sol);
+  } else {
+    $("#searchResultOneText").html(`ERROR! Call Jeff! ${response.message}`);
+  }
+}
+
+async function makeApiCall(earthDate) {
+  const response = await NasaService.getMars(earthDate);
+  getElements(response);
+}
+
 $(document).ready(function () {
   $("#marsButton").click(function () {
     let earthDate = $("#marsFind").val();
+    $("#date").html(earthDate);
     let currentDate = new Date(earthDate);
     currentDate.setDate(currentDate.getDate() + 1);
     let minDate = new Date('2012, 08, 06');
     let maxDate = new Date();
-    if (currentDate <= minDate || currentDate >= maxDate){
-        alert('Enter a date between 08-06-2012 and Yesterday!')
+    if (currentDate <= minDate || currentDate >= maxDate || currentDate == "Invalid Date"){
+      alert('Enter a date between 08-06-2012 and Yesterday!');
     } else {
-      $("#marsFind").val(""); 
+      $("#marsFind").val("");
+      $("#marsModal").modal(); 
       $("#marsResult").show();
-      let promise= NasaService.getMars(earthDate);
-      promise.then(function(response) {
-        const body = JSON.parse(response);
-        $("#searchResultOne").attr("src", body.photos[0].img_src);
-        $("#searchResultOneTextCenter").html("Camera: " + body.photos[0].camera.full_name);
-        $("#searchResultOneTextLeft").html("Rover: " + body.photos[0].rover.name);
-        $("#searchResultOneTextRight").html("Sol Date: " + body.photos[0].sol);
-        $("#searchResultTwo").attr("src", body.photos[3].img_src);
-        $("#searchResultTwoTextCenter").html("Camera: " + body.photos[3].camera.full_name);
-        $("#searchResultTwoTextLeft").html("Rover: " + body.photos[3].rover.name);
-        $("#searchResultTwoTextRight").html("Sol Date: " + body.photos[3].sol);
-        $("#searchResultThree").attr("src", body.photos[4].img_src);
-        $("#searchResultThreeTextCenter").html("Camera: " + body.photos[4].camera.full_name);
-        $("#searchResultThreeTextLeft").html("Rover: " + body.photos[4].rover.name);
-        $("#searchResultThreeTextRight").html("Sol Date: " + body.photos[4].sol);
-        $("#searchResultFour").attr("src", body.photos[5].img_src);
-        $("#searchResultFourTextCenter").html("Camera: " + body.photos[5].camera.full_name);
-        $("#searchResultFourTextLeft").html("Rover: " + body.photos[5].rover.name);
-        $("#searchResultFourTextRight").html("Sol Date: " + body.photos[5].sol);
-      }, function(error) {
-        $("#searchResultOneText").html(`ERROR! Call Jeff! ${error}`);
-      });
     }
+    makeApiCall(earthDate);
   });
-}); 
+});

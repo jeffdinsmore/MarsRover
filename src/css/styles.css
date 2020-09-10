@@ -40,15 +40,15 @@ img {
 
 #marsResult {
   display: none;
-  margin:auto;
-  /* margin-top: 100px; */
+  margin: 0 auto;
+  align-items: center;
   color: black;
 }  
 
 .col-lg-5 {
   background-color: white;
   padding: 20px;
-  margin: 30px;
+  margin: 20px;
 }
 
 p {
@@ -111,5 +111,5 @@ input[type=date]{
 } 
 
 .modal-body {
-  background-color: rgba(0,0,0,0.6);
+  background-color:rgba(103, 51, 31, .6);
 }
